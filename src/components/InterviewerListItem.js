@@ -6,7 +6,7 @@ export default function InterviewerListItem(props) {
   const interviewerClass = classNames("interviewers__item", props.className, {
     "interviewers__item--selected": props.selected
   });
-  
+
   const formatName = function(selected) {
     if (selected)
       return `${props.name}`;
@@ -15,8 +15,7 @@ export default function InterviewerListItem(props) {
   return (
     <li
       className={interviewerClass}
-      onClick={() => props.setInterviewer(props.id)}
-      id={props.id}
+      onClick={props.setInterviewer}
     >
       <img
         className="interviewers__item-image"

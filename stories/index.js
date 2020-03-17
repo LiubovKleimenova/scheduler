@@ -76,17 +76,17 @@ const interviewer = {
 
 storiesOf("InterviewerListItem", module)
   .addParameters({
-      backgrounds: [{ name: "dark", value: "#222f3e", default: true }]
+    backgrounds: [{ name: "dark", value: "#222f3e", default: true }]
   })
   .add("Unselected", () => (
-      <InterviewerListItem
+    <InterviewerListItem
       id={interviewer.id}
       name={interviewer.name}
       avatar={interviewer.avatar}
     />
   ))
   .add("Selected", () => (
-      <InterviewerListItem
+    <InterviewerListItem
       id={interviewer.id}
       name={interviewer.name}
       avatar={interviewer.avatar}
@@ -94,11 +94,11 @@ storiesOf("InterviewerListItem", module)
     />
   ))
   .add("Clickable", () => (
-      <InterviewerListItem
+    <InterviewerListItem
       id={interviewer.id}
       name={interviewer.name}
       avatar={interviewer.avatar}
-      setInterviewer={action("setInterviewer")}
+      setInterviewer={event => action("setInterviewer")(interviewer.id)}
     />
   ));
 
