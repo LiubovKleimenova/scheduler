@@ -1,6 +1,6 @@
 import React from "react";
 import "components/DayListItem.scss";
-var classNames = require("classnames");
+let classNames = require("classnames");
 
 
 export default function DayListItem(props) {
