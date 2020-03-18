@@ -139,5 +139,12 @@ storiesOf("InterviewerList", module)
     .add("Appointment", () => <Appointment />)
     .add("Appointment with time", () => <Appointment time="12pm" />)
     .add("Header", () => <Header time="12pm" />)
-    .add("Empty", () => <Empty onAdd={action("onAdd")} 
-  />);
+    .add("Empty", () => <Empty onAdd={action("onAdd")} />)
+    .add("Show", () => (
+      <Show
+        student="Lydia Miller-Jones"
+        interviewer={interviewer}
+        onEdit={action("onEdit")}
+        onDelete={action("onDelete")}
+      />
+    ));
