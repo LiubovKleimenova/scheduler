@@ -137,5 +137,5 @@ storiesOf("InterviewerList", module)
     })
     .add("Appointment", () => <Appointment />)
     .add("Appointment with time", () => <Appointment time="12pm" />)
-    .add("Header", ()=> <Header time="12pm" />)
-    ;
+    .add("Header", () => <Header time="12pm" />)
+    .add("Empty", () => <Empty onAdd={action("onAdd")} />);
