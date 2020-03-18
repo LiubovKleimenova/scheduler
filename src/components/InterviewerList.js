@@ -8,7 +8,7 @@ export default function InterviewerList(props) {
       <h4 className="interviewers__header text--light">Interviewer</h4>
       <ul className="interviewers__list">
         {props.interviewers.map(interviewer => (
-          <li>
+          
             <InterviewerListItem
               key={interviewer.id}
               name={interviewer.name}
@@ -16,7 +16,7 @@ export default function InterviewerList(props) {
               selected={interviewer.id === props.value}
               setInterviewer={event => props.onChange(interviewer.id)}
             />
-          </li>
+          
         ))}
       </ul>
     </section>

@@ -155,7 +155,7 @@ storiesOf("InterviewerList", module)
     .add("Confirm", () => (
       <Confirm
         message="Delete the appointment?"
-        onConfirm={action("onDelete")}
+        onDelete={action("onDelete")}
         onCancel={action("onCancel")}
       />
     ))
@@ -168,9 +168,10 @@ storiesOf("InterviewerList", module)
     ))
     .add("Edit Form", () => (
       <Form
-        name="Archie Cohen"
+        id={interviewer.id}
+        name={name}
         interviewers={interviewers}
-        interviewer={1}
+        interviewer={interviewer.id}
         onSave={action("onSave")}
         onCancel={action("onCancel")}
       />
