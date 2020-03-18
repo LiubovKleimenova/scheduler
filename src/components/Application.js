@@ -88,6 +88,7 @@ export default function Application(props) {
       <section className="schedule">
         {appointments.map(appointment => (
           <Appointment
+            key={appointment.id}
             id={appointment.id}
             time={appointment.time}
             interview={appointment.interview}
