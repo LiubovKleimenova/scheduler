@@ -61,6 +61,7 @@ export default function Application(props) {
       console.error(err)
     })
   }, [days])
+  
   return (
     <main className="layout">
       <section className="sidebar">
