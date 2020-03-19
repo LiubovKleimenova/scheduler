@@ -3,6 +3,7 @@ import React, {useState, useEffect} from "react";
 import "components/Application.scss";
 import DayList from "components/DayList";
 import Appointment from "components/Appointment/index";
+import getAppointmentsForDay from "helpers/selector";
 const axios = require("axios");
 
 const appointments = [
