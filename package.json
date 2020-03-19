@@ -41,7 +41,8 @@
     "@testing-library/react": "^8.0.7",
     "@testing-library/react-hooks": "^3.2.1",
     "fsevents": "^2.1.2",
-    "node-sass": "^4.13.1"
+    "node-sass": "^4.13.1",
+    "react-test-renderer": "^16.9.0"
   },
   "jest": {
     "watchPathIgnorePatterns": [
