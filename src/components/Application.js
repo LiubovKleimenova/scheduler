@@ -63,11 +63,11 @@ export default function Application(props) {
       axios.get(`/api/days`),
       axios.get(`/api/appointments`)
     ])
-    .then((all) => 
-      {console.log(all)
-      const [days, appointments] = all;
+    .then((all) => {
+      console.log(all);
+      //const [days, appointments] = all;
       //setDays(response.data)}
-      //setState(prev => ({days: all[0], appointments:all[1]}))
+      setState(prev => ({ ...prev, days: all[0].data, appointments: all[1].data }))
       })
     .catch(err => 
       console.error(err)
