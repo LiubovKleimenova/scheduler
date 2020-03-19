@@ -20,17 +20,21 @@ export default function Application(props) {
   useEffect(()=>{
     Promise.all([
       axios.get(`/api/days`),
-      axios.get(`/api/appointments`)
+      axios.get(`/api/appointments`),
+      axios.get(`/api/interviewers`)
     ])
-    .then((all) => {
-      console.log(all);
-      //const [days, appointments] = all;
-      //setDays(response.data)}
-      setState(prev => ({ ...prev, days: all[0].data, appointments: all[1].data }))
+      .then(all => {
+        console.log(all);
+        //const [days, appointments] = all;
+        //setDays(response.data)}
+        setState(prev => ({
+          ...prev,
+          days: all[0].data,
+          appointments: all[1].data,
+          interviewers: all[2].data
+        }));
       })
-    .catch(err => 
-      console.error(err)
-    )
+      .catch(err => console.error(err));
   }, [])
 
   return (
