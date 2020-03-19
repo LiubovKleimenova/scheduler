@@ -62,7 +62,7 @@ export default function Application(props) {
             key={appointment.id}
             id={appointment.id}
             time={appointment.time}
-            interview={getInterview(state, appointment.interview)}
+            interview={appointment.interview}
           />
         ))}
         <Appointment key="last" time="5pm" />
