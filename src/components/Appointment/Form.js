@@ -27,7 +27,6 @@ export default function Form(props) {
             value={name}
             onChange={event => {
               setName(event.target.value);
-              console.log(name);
             }}
             /*
           This must be a controlled component
@@ -50,10 +49,7 @@ export default function Form(props) {
           <Button
             confirm
             onClick={() => {props.onSave(name, interviewer)
-              // setInterviewer(interviewer => {
-              //   console.log(interviewer);
-              //   return interviewer;
-              // });
+
             }}
           >
             Save
