@@ -14,8 +14,13 @@ export default function Application(props) {
     interviewers: {}
   });
 
+
   const setDay = day => setState({ ...state, day });
-  //const setDays = days => setState(prev => ({ ...prev, days }));
+  
+  function bookInterview(id, interview) {
+    console.log(id, interview);
+  }
+
 
   useEffect(()=>{
     Promise.all([
@@ -63,6 +68,7 @@ export default function Application(props) {
             time={appointment.time}
             interview={getInterview(state, appointment.interview)}
             interviewers={getInterviewersForDay(state, state.day)}
+            bookInterview={bookInterview}
           />
         ))}
         <Appointment key="last" time="5pm" />
