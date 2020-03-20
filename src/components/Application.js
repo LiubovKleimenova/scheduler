@@ -28,14 +28,12 @@ export default function Application(props) {
       [id]: appointment
     };
 
-    axios.put(`/api/appointments/${id}`, appointment);
+    return axios.put(`/api/appointments/${id}`, appointment).then(
 
     setState({
       ...state,
       appointments
-    });
-
-    console.log(id, interview);
+    }));
   }
 
 
