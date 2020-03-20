@@ -26,3 +26,8 @@ export function getInterview(state, interview) {
   console.log(result);
   return result;
 }
+
+export function getInterviewersForDay(state, day) {
+  let result = [];
+  return result;
+}
