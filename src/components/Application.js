@@ -54,6 +54,8 @@ export default function Application(props) {
     );
   }
 
+  function editInterview() {} 
+
 
   useEffect(()=>{
     Promise.all([
@@ -101,6 +103,7 @@ export default function Application(props) {
             interviewers={getInterviewersForDay(state, state.day)}
             bookInterview={bookInterview}
             cancelInterview={cancelInterview}
+            editInterview={editInterview}
           />
         ))}
         <Appointment key="last" time="5pm" />
