@@ -4,6 +4,7 @@ import "components/Appointment/styles.scss";
 import Header from "components/Appointment/Header";
 import Show from "components/Appointment/Show";
 import Empty from "components/Appointment/Empty";
+import Error from "components/Appointment/Error";
 import Form from "components/Appointment/Form";
 import Status from "components/Appointment/Status";
 import Confirm from "components/Appointment/Confirm";
@@ -55,7 +56,7 @@ export default function Appointment(props) {
           student={props.interview.student}
           interviewer={props.interview.interviewer}
           onDelete={() => transition(CANCELING)}
-          onEdit={()=>transition(EDIT)}
+          onEdit={() => transition(EDIT)}
         />
       )}
       {mode === CREATE && (
@@ -83,6 +84,11 @@ export default function Appointment(props) {
             save(name, interviewer);
           }}
           onCancel={() => transition(SHOW)}
+        />
+      )}
+      {mode === ERROR_SAVE && <Error />}
+      {mode === ERROR_DELETE && (
+        <Error
         />
       )}
     </article>
