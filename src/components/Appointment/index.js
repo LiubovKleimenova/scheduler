@@ -16,6 +16,9 @@ const SAVING = "SAVING";
 const CANCELING = "CANCELING";
 const DELETING = "DELETING";
 const EDIT = "EDIT";
+const ERROR_SAVE = "ERROR_SAVE";
+const ERROR_DELETE = "ERROR_DELETE";
+
 
 export default function Appointment(props) {
   const { mode, transition, back } = useVisualMode(
@@ -30,7 +33,8 @@ export default function Appointment(props) {
     transition(SAVING);
     props
       .bookInterview(props.id, interview)
-      .then(() => transition(SHOW));
+      .then(() => transition(SHOW))
+      .catch(() => transition(ERROR_SAVE));
   }
 
   
@@ -39,6 +43,7 @@ export default function Appointment(props) {
     props
       .cancelInterview(props.id)
       .then(() => transition(EMPTY))
+      .catch(() => transition(ERROR_DELETE));
   }
 
   return (
@@ -73,7 +78,7 @@ export default function Appointment(props) {
         <Form
           interviewers={props.interviewers}
           name={props.interview.student}
-          interviewer={props.interviewer}
+          interviewer={props.interview.interviewer.id}
           onSave={(name, interviewer) => {
             save(name, interviewer);
           }}
