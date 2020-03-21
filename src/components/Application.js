@@ -28,11 +28,11 @@ export default function Application(props) {
       [id]: appointment
     };
 
-    return axios.put(`/api/appointments/${id}`, appointment).then(
-    setState({
+    return axios.put(`/api/appointments/${id}`, appointment).then(()=>
+    {setState({
       ...state,
       appointments
-    }));
+    })});
   }
 
   function cancelInterview(id) {
@@ -46,11 +46,11 @@ export default function Application(props) {
       [id]: appointment
     };
 
-    return axios.delete(`/api/appointments/${id}`, appointment).then(
-      setState({
+    return axios.delete(`/api/appointments/${id}`, appointment).then(()=>
+      {setState({
         ...state,
         appointments
-      })
+      })}
     );
   }
 
