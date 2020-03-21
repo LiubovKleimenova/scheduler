@@ -29,11 +29,14 @@ export default function Application(props) {
     };
 
     return axios.put(`/api/appointments/${id}`, appointment).then(
-
     setState({
       ...state,
       appointments
     }));
+  }
+
+  function cancelInterview(id) {
+    state.appointment[id] = null;
   }
 
 
