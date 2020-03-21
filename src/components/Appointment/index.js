@@ -62,6 +62,7 @@ export default function Appointment(props) {
       {mode === SAVING && (<Status />)}
       {mode === CANCELING && (
         <Confirm
+          message="Do you want to cancel the appointment?"
           onConfirm={deleteApt}
           onCancel={() => back()}
         />)}
