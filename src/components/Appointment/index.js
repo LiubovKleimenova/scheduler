@@ -35,7 +35,7 @@ export default function Appointment(props) {
     props
       .bookInterview(props.id, interview)
       .then(() => transition(SHOW))
-      .catch(() => transition(ERROR_SAVE));
+      .catch(() => transition(ERROR_SAVE, true));
   }
 
   
@@ -44,7 +44,7 @@ export default function Appointment(props) {
     props
       .cancelInterview(props.id)
       .then(() => transition(EMPTY))
-      .catch(() => transition(ERROR_DELETE));
+      .catch(() => transition(ERROR_DELETE, true));
   }
 
   return (
@@ -86,10 +86,17 @@ export default function Appointment(props) {
           onCancel={() => transition(SHOW)}
         />
       )}
-      {mode === ERROR_SAVE && <Error />}
+      {mode === ERROR_SAVE && (
+        <Error 
+        message="Cannot save your appointment.Try later"
+        onClose={()=> back()}
+         />
+      )}
       {mode === ERROR_DELETE && (
-        <Error
-        />
+        <Error 
+        message="Cannot delete your appointment.Try later"
+        onClose={()=> back()}
+         />
       )}
     </article>
   );
