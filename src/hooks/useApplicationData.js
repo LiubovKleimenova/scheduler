@@ -63,7 +63,7 @@ export default function useApplicationDate() {
         }));
       })
       .catch(err => console.error(err));
-  }, []);
+  }, [bookInterview, cancelInterview]);
 
   return {state, setDay, bookInterview, cancelInterview}
 }
