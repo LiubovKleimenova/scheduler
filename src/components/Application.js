@@ -100,6 +100,7 @@ export default function Application(props) {
             interview={getInterview(state, appointment.interview)}
             interviewers={getInterviewersForDay(state, state.day)}
             bookInterview={bookInterview}
+            cancelInterview={cancelInterview}
           />
         ))}
         <Appointment key="last" time="5pm" />
