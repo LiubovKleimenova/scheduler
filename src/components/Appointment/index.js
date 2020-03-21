@@ -15,6 +15,7 @@ const CREATE = "CREATE";
 const SAVING = "SAVING";
 const CANCELING = "CANCELING";
 const DELETING = "DELETING";
+const EDIT = "EDIT";
 
 export default function Appointment(props) {
   const { mode, transition, back } = useVisualMode(
@@ -32,10 +33,7 @@ export default function Appointment(props) {
       .then(() => transition(SHOW));
   }
 
-  function showConfirm() {
-    transition(CANCELING);
-  }
-
+  
   function deleteApt() {
     transition(DELETING)
     props
@@ -51,7 +49,7 @@ export default function Appointment(props) {
         <Show
           student={props.interview.student}
           interviewer={props.interview.interviewer}
-          onDelete={showConfirm}
+          onDelete={()=> transition(CANCELING)}
         />
       )}
       {mode === CREATE && (
