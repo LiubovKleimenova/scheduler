@@ -29,11 +29,15 @@ export function getInterview(state, interview) {
 
 export function getInterviewersForDay(state, day) {
   let filteredDays = state.days.filter(newDay => day === newDay.name);
+
   if (filteredDays === [] || !day || filteredDays[0] === undefined) {
     return [];
   }
   const { appointments } = filteredDays[0];
+  
   const result = [];
+
+
   for (let appointment of Object.values(state.appointments)) {
     if (!appointments.includes(appointment.id) && appointment.interview) {
       let interviewer = appointment.interview.interviewer.toString();
