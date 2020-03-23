@@ -28,6 +28,7 @@ export default function Form(props) {
             onChange={event => {
               setName(event.target.value);
             }}
+            data-testid="student-name-input"
           />
         </form>
         <InterviewerList
@@ -46,8 +47,8 @@ export default function Form(props) {
           </Button>
           <Button
             confirm
-            onClick={() => {props.onSave(name, interviewer)
-
+            onClick={() => {
+              props.onSave(name, interviewer);
             }}
           >
             Save
