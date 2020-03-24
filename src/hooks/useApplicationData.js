@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-const axios = require("axios");
+import axios from "axios";
 export default function useApplicationDate() {
   const [state, setState] = useState({
     day: "Monday",
