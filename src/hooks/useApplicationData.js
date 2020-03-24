@@ -22,9 +22,12 @@ export default function useApplicationDate() {
     };
 
     return axios.put(`/api/appointments/${id}`, appointment).then(() => {
-      setState({
-        ...state,
-        appointments
+      setState(prev => ({ ...prev, appointments }));
+      Promise.all([axios.get(`/api/days`)]).then(([days]) => {
+        setState(prev => ({
+          ...prev,
+          days: days.data
+        }));
       });
     });
   }
@@ -41,9 +44,12 @@ export default function useApplicationDate() {
     };
 
     return axios.delete(`/api/appointments/${id}`, appointment).then(() => {
-      setState({
-        ...state,
-        appointments
+      setState(prev => ({ ...prev, appointments }));
+      Promise.all([axios.get(`/api/days`)]).then(([days]) => {
+        setState(prev => ({
+          ...prev,
+          days: days.data
+        }));
       });
     });
   }
