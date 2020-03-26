@@ -25,11 +25,7 @@ npm test
 ```sh
 npm run storybook
 ```
-## Running Storybook Visual Testbed (Host)
 
-```sh
-npm run storybook
-```
 ## Project Screenshots
 
 ### Adding new appointment
