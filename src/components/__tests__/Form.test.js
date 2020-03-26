@@ -14,7 +14,7 @@ describe("Form", () => {
       avatar: "https://i.imgur.com/LpaY82x.png"
     }
   ];
-  
+
   it("renders without student name if not provided", () => {
     const { getByPlaceholderText } = render(
       <Form interviewers={interviewers} />
@@ -30,14 +30,15 @@ describe("Form", () => {
   });
 
   it("validates that the student name is not blank", () => {
-    /* 1. validation is shown */
-
     const onSave = jest.fn();
     const { getByText } = render(
       <Form interviewers={interviewers} onSave={onSave} />
     );
+
     fireEvent.click(getByText("Save"));
+
     expect(getByText(/student name cannot be blank/i)).toBeInTheDocument();
+
     expect(onSave).not.toHaveBeenCalled();
   });
 
@@ -60,8 +61,7 @@ describe("Form", () => {
 
     expect(queryByText(/student name cannot be blank/i)).toBeNull();
 
-    expect(onSave).toHaveBeenCalledTimes(1);
-    expect(onSave).toHaveBeenCalledWith("Lydia Miller-Jones", null);
+    expect(onSave).toHaveBeenCalledTimes(0);
   });
 
   it("calls onCancel and resets the input field", () => {

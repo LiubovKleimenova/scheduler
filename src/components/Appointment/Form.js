@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-
 import InterviewerList from "components/InterviewerList";
 import Button from "components/Button";
 
@@ -7,6 +6,8 @@ export default function Form(props) {
   const [name, setName] = useState(props.name || "");
   const [error, setError] = useState("");
   const [interviewer, setInterviewer] = useState(props.interviewer || null);
+
+  //resets name and intervierew on Cancel click
   const reset = () => {
     setName(""); 
     setInterviewer(null)
@@ -15,6 +16,8 @@ export default function Form(props) {
     reset();
     props.onCancel();
   }
+
+  //doesn't let to sent empty appointment form
   function validate() {
     if (name === "") {
       setError("Student name cannot be blank");
@@ -24,7 +27,6 @@ export default function Form(props) {
       setError("Choose interviewer");
       return;
     }
-
     setError("");
     props.onSave(name, interviewer);
   }
@@ -63,7 +65,7 @@ export default function Form(props) {
           <Button
             confirm
             onClick={() => {
-              validate()
+              validate();
             }}
           >
             Save

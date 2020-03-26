@@ -1,6 +1,5 @@
 import React from "react";
 import "components/Appointment/styles.scss";
-//let classNames = require("classnames");
 import Header from "components/Appointment/Header";
 import Show from "components/Appointment/Show";
 import Empty from "components/Appointment/Empty";
@@ -22,6 +21,7 @@ const ERROR_DELETE = "ERROR_DELETE";
 
 
 export default function Appointment(props) {
+
   const { mode, transition, back } = useVisualMode(
     props.interview ? SHOW : EMPTY
   );
@@ -38,7 +38,6 @@ export default function Appointment(props) {
       .catch((error) => transition(ERROR_SAVE, true));
   }
 
-  
   function deleteApt() {
     transition(DELETING, true)
     props
@@ -47,6 +46,7 @@ export default function Appointment(props) {
       .catch((error) => transition(ERROR_DELETE, true));
   }
 
+  //renders different components depending on mode
   return (
     <article className="appointment" data-testid="appointment">
       <Header time={props.time} />
