@@ -30,3 +30,12 @@ npm run storybook
 ```sh
 npm run storybook
 ```
+### 
+
+!["Adding new appointment form"](https://github.com/LiubovKleimenova/scheduler/blob/master/docs/AddingAppointment.png?raw=true)
+!["Cancelling existing appointment"](https://github.com/LiubovKleimenova/scheduler/blob/master/docs/CancellingConfirmation.png?raw=true)
+!["Choosing a day from the days where there are spots available"](https://github.com/LiubovKleimenova/scheduler/blob/master/docs/ChosenDay.png?raw=true)
+!["Form showing an error"](https://github.com/LiubovKleimenova/scheduler/blob/master/docs/ErrorHandling.png?raw=true)
+!["User cannot add appointment when there is no name or interviewer chosen"](https://github.com/LiubovKleimenova/scheduler/blob/master/docs/FormValidation.png?raw=true)
+!["Status bar is shown when applying changes takes time"](https://github.com/LiubovKleimenova/scheduler/blob/master/docs/SavingChanges.png?raw=true)
+
